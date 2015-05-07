@@ -7,6 +7,8 @@ def filter_long_words(L,n):
         if len(word) > n:
             res.append(word)
     return res
+    
+#Test rozwiązania
 L= ['aa','aaa']
 A = filter_long_words(L,2)
 print (A)
