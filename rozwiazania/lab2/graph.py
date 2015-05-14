@@ -1,4 +1,4 @@
-from rozwiazania.lab_1.lab2.Vertex import Vertex
+from rozwiazania.lab2.Vertex import Vertex
 
 __author__ = 'kuban'
 
@@ -22,19 +22,9 @@ class Graph(object):
         return result
 
 
-v1 = Vertex(1)
-v2 = Vertex(2)
-v3 = Vertex(3)
-v4 = Vertex(4)
-v5 = Vertex(5)
 g=Graph("G")
-g.addEdge(v1,v2)
-g.addEdge(v1,v3)
-g.addEdge(v1,v4)
-g.addEdge(v2,v3)
-g.addEdge(v3,v4)
-g.addEdge(v2,v5)
-print(g)
+v1 = Vertex("1")
+g.addVertex(v1)
 
 
 

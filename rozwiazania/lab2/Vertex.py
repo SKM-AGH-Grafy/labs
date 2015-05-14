@@ -1,7 +1,7 @@
 __author__ = 'kuban'
 
 
-class Vertex(object):
+class Vertex():
     def __init__(self,name):
         self.name = str(name)
         self.neighbours =[]
@@ -22,9 +22,12 @@ class Vertex(object):
 
 
 
-a=Vertex("v")
 b=Vertex("v")
-#a.addNeighbour(b)
-print(a.isNeighbour(b))
-c=object()
-#print(c==c)
+a=Vertex("v")
+print(a)
+# #a.addNeighbour(b)
+# print(a.isNeighbour(b))
+# c=object()
+# print(c.__eq__(c))
+print(a==b)
+print(Vertex.isNeighbour)
