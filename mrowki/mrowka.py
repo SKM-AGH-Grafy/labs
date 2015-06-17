@@ -6,10 +6,12 @@ import matplotlib.pyplot as plt
 import math
 
 class Mrowka:
-    def __init__(self, imie, pvalue, wierzcholekPoczatkowy):
+    def __init__(self, imie, pvalue, wierzcholekPoczatkowy, alfa, tau0):
         self.sciezka = [wierzcholekPoczatkowy]
         self.imie = imie
         self.pvalue = pvalue
+        self.alfa = alfa
+        self.tau0 = tau0
 
    def pobierzFeromonySasiadow(self, graf):
        nieodwiedzone = [x for x in graf.adjacency_list() if x not in self.sciezka]
@@ -36,7 +38,11 @@ class Mrowka:
 
    def wykonajKrok(self, graf):
        self.dodajWierzcholekDoSciezki(graf)
+       graf.zmodyfikujWartoscF(self.sciezka[-2],self.sciezka[-1],self.wyliczNowaWartoscFeromonu(graf.pobierzWartoscF(self.sciezka[-2],self.sciezka[-1])))
 
+   def wyliczNowaWartoscFeromonu(self,staraWartoscFeromonu):
+        nowaWartoscFeromonu = (1-self.alfa)*staraWartoscFeromonu + self.alfa*self.tau0
+        return nowaWartoscFeromonu
 
 G=nx.Graph()
 l=G.adjacency_list()

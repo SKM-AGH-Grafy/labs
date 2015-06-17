@@ -7,19 +7,27 @@ import matplotlib.pyplot as plt
 from mrowka import Mrowka
 
 class Algorytm:
-   def __init__(self, G, l_mrowek, q0, alfa, beta, tau0):
+    def __init__(self, G, l_mrowek, q0, alfa, beta, tau0):
+        self.G = G
+        self.l_mrowek = l_mrowek
+        self.q0=q0
+        self.alfa = alfa
+        self.beta = beta
+        self.tau0 = tau0
+        self.listaMrowek=[]
+    def stworzMrowke(self, name):
+        mrowka = Mrowka(name,self.q0)
+        self.listaMrowek.append(mrowka)
+    def wykonajKrokMrowek(self):
+        for mrowka in self.listaMrowek:
+            mrowka.wykonajKrok(self.G)
+    def wykonajIteracje():
         pass
-   def stworzMrowke():
+    def porownajMrowki():
         pass
-   def wykonajKrokMrowki():
+    def nagrodzMrowke():
         pass
-   def wykonajIteracje():
-        pass
-   def porownajMrowki():
-        pass
-   def nagrodzMrowke():
-        pass
-   def zwrocNajkrotszyCykl():
+    def zwrocNajkrotszyCykl():
         pass
 
 G=nx.read_gpickle("resources/cities.gpickle")
