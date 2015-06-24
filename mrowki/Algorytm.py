@@ -21,13 +21,13 @@ class Algorytm:
     def wykonajKrokMrowek(self):
         for mrowka in self.listaMrowek:
             mrowka.wykonajKrok(self.G)
-    def wykonajIteracje():
+    def wykonajIteracje(self):
         pass
-    def porownajMrowki():
+    def porownajMrowki(self):
         pass
-    def nagrodzMrowke():
+    def nagrodzMrowke(self):
         pass
-    def zwrocNajkrotszyCykl():
+    def zwrocNajkrotszyCykl(self):
         pass
 
 G=nx.read_gpickle("resources/cities.gpickle")

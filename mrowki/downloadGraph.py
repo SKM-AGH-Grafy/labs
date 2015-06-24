@@ -16,13 +16,13 @@ G.add_nodes_from(cities)
 
 
 for x in cities:
-   for y in cities:
-       if x >= y:
-           continue
-       address = x + ', Poland'
-       destination = y + ', Poland'
-       directions = gmaps.directions(address, destination)
-       G.add_edge(x, y, weight=directions[0]['legs'][0]['distance']['value']//1000)
-       print(G[x][y]['weight'])
+    for y in cities:
+        if x >= y:
+            continue
+        address = x + ', Poland'
+        destination = y + ', Poland'
+        directions = gmaps.directions(address, destination)
+        G.add_edge(x, y, weight=directions[0]['legs'][0]['distance']['value']//1000)
+        print(G[x][y]['weight'])
 
 nx.write_gpickle(G,"cities.gpickle")
