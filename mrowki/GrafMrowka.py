@@ -14,9 +14,11 @@ class GrafMrowka(nx.Graph):
         for edge in self.edges():
             edge.feromon=self.tau0
     def pobierzWartoscF(self, wS,wK):
-        return self[wS][wK].feromon
+        return self.edge[wS][wK].feromon
     def zmodyfikujWartoscF(self,wS,wK,nowaWartosc):
-        self[wS][wK].feromon = nowaWartosc
+        self.edge[wS][wK].feromon = nowaWartosc
+    def pobierzOdleglosc(self,MiastoStart, MiastoKonc):
+        return self.edge[MiastoStart][MiastoKonc]['weight']
 
 g=nx.Graph()
 G=GrafMrowka(g)
